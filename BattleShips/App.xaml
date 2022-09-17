@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:BattleShips"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="Empty" Color="Black"></SolidColorBrush>
+            <SolidColorBrush x:Key="Miss" Color="Red"></SolidColorBrush>
+            <SolidColorBrush x:Key="Hit" Color="Green"></SolidColorBrush>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

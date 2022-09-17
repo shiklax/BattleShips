@@ -25,8 +25,10 @@ namespace BattleShips {
         private void StartGameClick(object sender, RoutedEventArgs e) {            
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
-                    Button b1 = new Button() {Background = Brushes.Black };
-                    Button b2 = new Button() {Background = Brushes.Black,};
+                    Button b1 = new Button() {Background = Brushes.Black};
+                    Button b2 = new Button() {Background = Brushes.Black};
+                    b1.Style = (Style)FindResource("btnStyle");
+                    b2.Style = (Style)FindResource("btnStyle");
                     Grid.SetRow(b1, i);
                     Grid.SetColumn(b1, j);
                     Grid.SetRow(b2, i);
@@ -35,6 +37,8 @@ namespace BattleShips {
                     Player2Grid.Children.Add(b2);
                 }
             }
+            Player1Grid.Background = Brushes.Black;
+            Player2Grid.Background = Brushes.Black;
         }
     }
 }

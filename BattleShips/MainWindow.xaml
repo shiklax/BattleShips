@@ -10,15 +10,15 @@
         <Border>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="300*"></ColumnDefinition>
+                    <ColumnDefinition Width="258*"></ColumnDefinition>
+                    <ColumnDefinition Width="300*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="300*"></RowDefinition>
+                    <RowDefinition Height="300*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Column="0" Name="Player1Grid">
+                <Grid Grid.Column="0" Name="Player1Grid" Margin="0,0,0.333,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -30,10 +30,9 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                       
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -46,21 +45,13 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Button Content="Start Game" HorizontalAlignment="Left" Margin="90,49,0,0" VerticalAlignment="Top" Width="75" Click="StartGameClick"/>
-                    <Button Content="Reset Game" HorizontalAlignment="Left" Margin="90,75,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label Content="BattleShips" Margin="90,10,0,0" Width="75" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Grid Grid.Column="1" Margin="4.667,0,1,0">
+                    <Button Content="Start Game" HorizontalAlignment="Left" Margin="82,49,0,0" VerticalAlignment="Top" Width="75" Click="StartGameClick"/>
+                    <Button Content="Reset Game" HorizontalAlignment="Left" Margin="82,75,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Label Content="BattleShips" Margin="82,10,0,0" Width="75" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 </Grid>
-                <Grid Grid.Column="2" Name="Player2Grid">
+                <Grid Grid.Column="2" Name="Player2Grid" Margin="10,0,0.333,209.667" Grid.RowSpan="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -73,7 +64,6 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -87,6 +77,31 @@
                     </Grid.RowDefinitions>
                 </Grid>
             </Grid>
+
         </Border>
     </Grid>
+    <Window.Resources>
+        <Style x:Key="btnStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter></ContentPresenter>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 </Window>
